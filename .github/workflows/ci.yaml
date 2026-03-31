@@ -27,7 +27,9 @@ jobs: # Define los trabajos que ejecutará GitHub Actions.
         distribution: 'temurin'
 
     - name: Build with Maven  # Este paso compila tu proyecto usando Maven.
-      run: mvn clean install -DskipTests
+      run: 
+        cd Github_Actions
+        mvn clean install -DskipTests
 
     - name: Run tests with Maven  # Este paso ejecuta las pruebas unitarias con Maven para asegurarse de que el código funciona bien.
       run: mvn test  # Ejecuta las pruebas definidas en tu proyecto. jsjs
