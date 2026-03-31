@@ -26,4 +26,4 @@ jobs: # Define los trabajos que ejecutará GitHub Actions.
       run: mvn clean install  # Ejecuta Maven para compilar el proyecto. "clean" limpia cualquier compilación previa y "install" compila el proyecto.
 
     - name: Run tests with Maven  # Este paso ejecuta las pruebas unitarias con Maven para asegurarse de que el código funciona bien.
-      run: mvn test  # Ejecuta las pruebas definidas en tu proyecto.
+      run: mvn test  # Ejecuta las pruebas definidas en tu proyecto. jsjs
