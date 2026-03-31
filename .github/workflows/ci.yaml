@@ -3,10 +3,10 @@ name: Java CI with Maven # Le da un nombre al flujo de trabajo, en este caso "Ja
 on:
   push:
     branches:
-      - feature/Github-test  # Define que este flujo se ejecutará cuando haya un push en la rama "feature/Github-test".
+      - Feature/Github-test  # Define que este flujo se ejecutará cuando haya un push en la rama "feature/Github-test".
   pull_request:
     branches:
-      - feature/Github-test  # También se ejecutará cuando se haga un Pull Request hacia la rama "feature/Github-test".
+      - Feature/Github-test  # También se ejecutará cuando se haga un Pull Request hacia la rama "feature/Github-test".
 
 jobs: # Define los trabajos que ejecutará GitHub Actions.
   build:  # El trabajo se llama "build" (compilación).
