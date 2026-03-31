@@ -11,21 +11,28 @@
 	<groupId>com.devops</groupId>
 	<artifactId>Github_Actions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name/>
-	<description/>
-	<url/>
+	<packaging>jar</packaging>
+	<name>Github Actions DevOps Practice</name>
+	<description>Spring Boot application for GitHub Actions CI/CD pipeline practice with DevOps</description>
+	<url>https://github.com/3lRoman/springboot-devops-practice</url>
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>dev</id>
+			<name>DevOps Developer</name>
+			<email>dev@example.com</email>
+		</developer>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<connection>scm:git:https://github.com/yourusername/springboot-devops-practice.git</connection>
+		<developerConnection>scm:git:https://github.com/yourusername/springboot-devops-practice.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/yourusername/springboot-devops-practice</url>
 	</scm>
 	<properties>
 		<java.version>17</java.version>
@@ -55,11 +62,7 @@
 			<version>1.18.24</version>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
