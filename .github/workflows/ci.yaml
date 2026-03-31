@@ -24,6 +24,7 @@ jobs: # Define los trabajos que ejecutará GitHub Actions.
       uses: actions/setup-java@v4  # Usa la acción "setup-java" para configurar la versión de Java.
       with:
         java-version: '17'  # Aquí se especifica que se usará Java versión 17. Puedes cambiarlo según la versión que estés utilizando.
+        distribution: 'temurin'
 
     - name: Build with Maven  # Este paso compila tu proyecto usando Maven.
       run: mvn clean install -DskipTests
