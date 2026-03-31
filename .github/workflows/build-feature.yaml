@@ -23,5 +23,6 @@ jobs:
 
       - name: Build with Maven
         run: |
+          cd Github_Actions
           mvn clean install
           echo "Build with Maven completed"
