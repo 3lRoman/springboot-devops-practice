@@ -1,35 +1,31 @@
-name: Java CI with Maven # Le da un nombre al flujo de trabajo, en este caso "Java CI with Maven".
+name: Java CI with Maven
 
 on:
   push:
     branches:
-      - Feature/Github-test  # Define que este flujo se ejecutará cuando haya un push en la rama "feature/Github-test".
+      - Feature/Github-test
   pull_request:
     branches:
-      - Feature/Github-test  # También se ejecutará cuando se haga un Pull Request hacia la rama "feature/Github-test".
+      - Feature/Github-test
 
-jobs: # Define los trabajos que ejecutará GitHub Actions.
-  build:  # El trabajo se llama "build" (compilación).
-    runs-on: ubuntu-latest  # Esto indica que el trabajo se ejecutará en un entorno de Ubuntu (un sistema operativo basado en Linux).
-    
-    steps: # Pasos
-    
-    - name: Check out the repository  # Este paso descarga tu repositorio a la máquina donde se ejecuta el flujo.
-      uses: actions/checkout@v4  # Usa la acción "checkout" de GitHub para obtener el código del repositorio.
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    - name: Set up JDK 17  # Este paso configura la versión de Java que utilizará el flujo de trabajo.
-      uses: actions/setup-java@v4  # Usa la acción "setup-java" para configurar la versión de Java.
-      with:
-        java-version: '17'  # Aquí se especifica que se usará Java versión 17. Puedes cambiarlo según la versión que estés utilizando.
-        distribution: 'temurin'
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4  # Descarga tu repositorio
+          
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4  # Configura el JDK 17
+        with:
+          java-version: '17'  # Especifica la versión de Java
+          distribution: 'temurin'
 
-    - name: Build with Maven  # Este paso compila tu proyecto usando Maven.
-      run: 
-        cd Github_Actions
-        mvn clean install -DskipTests
+      - name: Change directory to Github_Actions and build with Maven
+        run: |
+          cd Github_Actions  # Cambia al directorio donde está el pom.xml
+          mvn clean install -DskipTests  # Ejecuta Maven
 
-    - name: Run tests with Maven  # Este paso ejecuta las pruebas unitarias con Maven para asegurarse de que el código funciona bien.
-      run: mvn test  # Ejecuta las pruebas definidas en tu proyecto. jsjs
+      - name: Run tests with Maven
+        run: mvn test  # Ejecuta las pruebas unitarias definidas en tu proyecto
