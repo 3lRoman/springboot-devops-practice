@@ -3,7 +3,7 @@ name: Build feature
 on:
   push:
     branches:
-      - 'feature/*'
+      - 'Feature/*'
 
 jobs:
   build-feature:
