@@ -22,7 +22,7 @@ jobs:
           java-version: '21'
 
       - name: Build with Maven
+        working-directory: Github_Actions
         run: |
-          cd Github_Actions
-          mvnw clean install -DskipTests
+          mvn clean install -DskipTests
           echo "Build with Maven completed"
