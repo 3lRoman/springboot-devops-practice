@@ -1,0 +1,28 @@
+name: Build feature
+
+on:
+  push:
+    branches:
+      - 'Feature/*'
+
+jobs:
+  build-feature:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: pull and checkout from git repository
+
+      - run: |
+          echo "Pulling and checking out from git repository" 
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'
+
+      - name: Build with Maven
+        working-directory: Github_Actions
+        run: |
+          mvn clean install -DskipTests
+          echo "Build with Maven completed"
